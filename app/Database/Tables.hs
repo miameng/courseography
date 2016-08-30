@@ -58,8 +58,8 @@ Courses json
     manualPracticalEnrolment Bool Maybe
     prereqs T.Text Maybe
     exclusions T.Text Maybe
-    breadth T.Text Maybe
-    distribution T.Text Maybe
+    breadth BreadthId Maybe
+    distribution DistributionId Maybe
     prereqString T.Text Maybe
     coreqs T.Text Maybe
     videoUrls [T.Text]
@@ -67,6 +67,7 @@ Courses json
 
 Lecture json
     code T.Text
+    Foreign Courses fkcourse code
     session T.Text
     section T.Text
     times [Time]
@@ -86,12 +87,10 @@ Tutorial json
     deriving Show
 
 Breadth
-    bId Int
     description String
     deriving Show
 
 Distribution
-    dId Int
     description String
     deriving Show
 
@@ -147,7 +146,7 @@ Post
 
 PostCategory
     name T.Text
-    post T.Text
+    postCode T.Text
     deriving Show
 |]
 
